@@ -60,7 +60,7 @@ function App() {
   ]
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-white">
+    <main className="min-h-screen bg-zinc-950 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,0.18),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(127,29,29,0.2),transparent_35%)] text-white">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <a href="#" className="text-lg font-bold">
           Francisco Jaimes
@@ -83,7 +83,7 @@ function App() {
       </nav>
 
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
+        <p className="mb-4 text-sm uppercase tracking-[0.3em] text-red-400">
           Software Engineer
         </p>
 
@@ -102,7 +102,7 @@ function App() {
         <div className="mt-8 flex flex-wrap gap-4">
           <a
             href="#projects"
-            className="rounded-xl bg-blue-500 px-5 py-3 font-medium text-white hover:bg-blue-600"
+            className="rounded-xl bg-red-600 px-5 py-3 font-medium text-white hover:bg-red-700"
           >
             View Projects
           </a>
@@ -139,7 +139,7 @@ function App() {
       <section id="projects" className="mx-auto max-w-6xl px-6 py-16">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-blue-400">
+            <p className="text-sm uppercase tracking-[0.3em] text-red-400">
               Work
             </p>
             <h2 className="mt-3 text-3xl font-bold">Featured Projects</h2>
@@ -150,7 +150,7 @@ function App() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 shadow-lg transition hover:-translate-y-1 hover:border-blue-500"
+              className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6 shadow-lg transition hover:-translate-y-1 hover:border-red-500"
             >
               <h3 className="text-xl font-semibold">{project.title}</h3>
 
@@ -174,7 +174,7 @@ function App() {
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm font-medium text-blue-400 hover:text-blue-300"
+                  className="text-sm font-medium text-red-400 hover:text-red-300"
                 >
                   GitHub →
                 </a>
@@ -184,7 +184,7 @@ function App() {
                     href={project.demo}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm font-medium text-emerald-400 hover:text-emerald-300"
+                    className="text-sm font-medium text-red-400 hover:text-red-300"
                   >
                     Live Demo →
                   </a>
@@ -196,7 +196,7 @@ function App() {
       </section>
 
       <section id="skills" className="mx-auto max-w-6xl px-6 py-16">
-        <p className="text-sm uppercase tracking-[0.3em] text-blue-400">
+        <p className="text-sm uppercase tracking-[0.3em] text-red-400">
           Toolkit
         </p>
 
@@ -206,7 +206,7 @@ function App() {
           {skills.map((skill) => (
             <span
               key={skill}
-              className="rounded-full border border-zinc-800 bg-zinc-900 px-4 py-2 text-sm text-zinc-300"
+              className="rounded-full border border-zinc-800 bg-zinc-900/90 px-4 py-2 text-sm text-zinc-300 transition hover:border-red-500 hover:text-white"
             >
               {skill}
             </span>
@@ -215,21 +215,21 @@ function App() {
       </section>
 
       <section id="education" className="mx-auto max-w-6xl px-6 py-16">
-        <p className="text-sm uppercase tracking-[0.3em] text-blue-400">
+        <p className="text-sm uppercase tracking-[0.3em] text-red-400">
           Background
         </p>
 
         <h2 className="mt-3 text-3xl font-bold">Education & Experience</h2>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6 transition hover:border-red-500">
             <h3 className="text-xl font-semibold">Texas Tech University</h3>
             <p className="mt-2 text-zinc-400">
               B.S. in Computer Science, Minor in Mathematics
             </p>
           </div>
 
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6 transition hover:border-red-500">
             <h3 className="text-xl font-semibold">
               Undergraduate Teaching Assistant
             </h3>
@@ -242,8 +242,8 @@ function App() {
       </section>
 
       <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
-        <div className="rounded-3xl border border-zinc-800 bg-zinc-900 p-8 md:p-10">
-          <p className="text-sm uppercase tracking-[0.3em] text-blue-400">
+        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/90 p-8 transition hover:border-red-500 md:p-10">
+          <p className="text-sm uppercase tracking-[0.3em] text-red-400">
             Contact
           </p>
 
@@ -257,7 +257,7 @@ function App() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="mailto:itzchoas@gmail.com"
-              className="rounded-xl bg-zinc-100 px-5 py-3 font-medium text-zinc-950 hover:bg-white"
+              className="rounded-xl bg-red-600 px-5 py-3 font-medium text-white hover:bg-red-700"
             >
               Email Me
             </a>
