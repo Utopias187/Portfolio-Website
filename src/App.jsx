@@ -1,4 +1,18 @@
 function App() {
+  const techStack = [
+    "React",
+    "Tailwind",
+    "JavaScript",
+    "Python",
+    "Rust",
+    "C",
+    "Node.js",
+    "Express",
+    "FastAPI",
+    "MongoDB",
+    "Git",
+  ]
+
   const projects = [
     {
       title: "NetCapRisk",
@@ -42,22 +56,7 @@ function App() {
     },
   ]
 
-  const skills = [
-    "Python",
-    "JavaScript",
-    "React",
-    "Tailwind CSS",
-    "Node.js",
-    "Express",
-    "FastAPI",
-    "MongoDB",
-    "SQL",
-    "C",
-    "C++",
-    "Rust",
-    "Git",
-    "GitHub",
-  ]
+  const workflow = ["Idea", "Plan", "Build", "Test", "Review", "Improve"]
 
   return (
     <main className="min-h-screen bg-zinc-950 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,0.18),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(127,29,29,0.2),transparent_35%)] text-white">
@@ -70,11 +69,11 @@ function App() {
           <a href="#projects" className="hover:text-white">
             Projects
           </a>
-          <a href="#skills" className="hover:text-white">
-            Skills
+          <a href="#about" className="hover:text-white">
+            About
           </a>
-          <a href="#education" className="hover:text-white">
-            Education
+          <a href="#experience" className="hover:text-white">
+            Experience
           </a>
           <a href="#contact" className="hover:text-white">
             Contact
@@ -82,69 +81,110 @@ function App() {
         </div>
       </nav>
 
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <p className="mb-4 text-sm uppercase tracking-[0.3em] text-red-400">
-          Software Engineer
-        </p>
+      <section className="mx-auto max-w-6xl px-6 pt-8">
+        <div className="flex flex-wrap gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4">
+          {techStack.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-zinc-800 bg-zinc-950 px-4 py-2 text-sm text-zinc-300 transition hover:border-red-500 hover:text-white"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </section>
 
-        <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
-          Building practical software across AI, cybersecurity, and full-stack
-          development.
-        </h1>
+      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[1.4fr_0.8fr] lg:items-center">
+        <div>
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-red-400">
+            Software Engineer
+          </p>
 
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
-          I&apos;m Francisco Jaimes, a Computer Science graduate from Texas Tech
-          University with a minor in Mathematics. I enjoy building tools that
-          solve real problems, from cybersecurity scanners to full-stack web
-          applications.
-        </p>
+          <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
+            Building practical software across AI, cybersecurity, and full-stack
+            development.
+          </h1>
 
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href="#projects"
-            className="rounded-xl bg-red-600 px-5 py-3 font-medium text-white hover:bg-red-700"
-          >
-            View Projects
-          </a>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
+            I&apos;m Francisco Jaimes, a Computer Science graduate from Texas
+            Tech University with a minor in Mathematics. I enjoy building tools
+            that solve real problems, from cybersecurity scanners to full-stack
+            web applications.
+          </p>
 
-          <a
-            href="https://github.com/Utopias187"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-900"
-          >
-            GitHub
-          </a>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="rounded-xl bg-red-600 px-5 py-3 font-medium text-white hover:bg-red-700"
+            >
+              View Projects
+            </a>
 
-          <a
-            href="https://www.linkedin.com/in/francisco-jaimes-56431a238/"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-900"
-          >
-            LinkedIn
-          </a>
+            <a
+              href="/Francisco_Jaimes_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-900"
+            >
+              Resume
+            </a>
 
-          <a
-            href="/Francisco_Jaimes_Resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-900"
-          >
-            Resume
-          </a>
+            <a
+              href="https://github.com/Utopias187"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-900"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/francisco-jaimes-56431a238/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-900"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/80 p-6 shadow-2xl">
+          <p className="text-sm uppercase tracking-[0.3em] text-red-400">
+            Focus
+          </p>
+
+          <h2 className="mt-4 text-2xl font-bold">Security-minded builder</h2>
+
+          <p className="mt-4 leading-7 text-zinc-300">
+            I like projects that combine clean interfaces, useful backend logic,
+            and practical problem solving.
+          </p>
+
+          <div className="mt-6 grid gap-3">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-4">
+              <p className="text-sm text-zinc-500">Main interests</p>
+              <p className="mt-1 font-medium">
+                AI · Cybersecurity · Full-Stack
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-4">
+              <p className="text-sm text-zinc-500">Currently seeking</p>
+              <p className="mt-1 font-medium">
+                New grad software engineering roles
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="projects" className="mx-auto max-w-6xl px-6 py-16">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-red-400">
-              Work
-            </p>
-            <h2 className="mt-3 text-3xl font-bold">Featured Projects</h2>
-          </div>
-        </div>
+        <p className="text-sm uppercase tracking-[0.3em] text-red-400">
+          Featured Work
+        </p>
+
+        <h2 className="mt-3 text-3xl font-bold">Projects</h2>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
@@ -195,45 +235,69 @@ function App() {
         </div>
       </section>
 
-      <section id="skills" className="mx-auto max-w-6xl px-6 py-16">
+      <section id="about" className="mx-auto max-w-6xl px-6 py-16">
         <p className="text-sm uppercase tracking-[0.3em] text-red-400">
-          Toolkit
+          Who I Am
         </p>
 
-        <h2 className="mt-3 text-3xl font-bold">Skills</h2>
+        <h2 className="mt-3 text-3xl font-bold">About Me</h2>
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="rounded-full border border-zinc-800 bg-zinc-900/90 px-4 py-2 text-sm text-zinc-300 transition hover:border-red-500 hover:text-white"
-            >
-              {skill}
-            </span>
-          ))}
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_1fr]">
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6">
+            <p className="leading-7 text-zinc-300">
+              I&apos;m interested in building software that feels useful, clean,
+              and practical. My work includes cybersecurity tools, networking
+              utilities, command-line applications, and full-stack web projects.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5">
+              <p className="text-sm uppercase text-red-400">Build</p>
+              <p className="mt-2 text-sm text-zinc-300">
+                Practical tools with real use cases.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5">
+              <p className="text-sm uppercase text-red-400">Focus</p>
+              <p className="mt-2 text-sm text-zinc-300">
+                Security, AI, and full-stack systems.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5">
+              <p className="text-sm uppercase text-red-400">Craft</p>
+              <p className="mt-2 text-sm text-zinc-300">
+                Clean code and simple user experiences.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="education" className="mx-auto max-w-6xl px-6 py-16">
+      <section id="experience" className="mx-auto max-w-6xl px-6 py-16">
         <p className="text-sm uppercase tracking-[0.3em] text-red-400">
-          Background
+          Credentials
         </p>
 
         <h2 className="mt-3 text-3xl font-bold">Education & Experience</h2>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 space-y-5">
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6 transition hover:border-red-500">
-            <h3 className="text-xl font-semibold">Texas Tech University</h3>
-            <p className="mt-2 text-zinc-400">
-              B.S. in Computer Science, Minor in Mathematics
-            </p>
+            <p className="text-sm text-zinc-500">Texas Tech University</p>
+            <h3 className="mt-2 text-xl font-semibold">
+              B.S. in Computer Science
+            </h3>
+            <p className="mt-2 text-zinc-400">Minor in Mathematics</p>
           </div>
 
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6 transition hover:border-red-500">
-            <h3 className="text-xl font-semibold">
+            <p className="text-sm text-zinc-500">Academic Experience</p>
+            <h3 className="mt-2 text-xl font-semibold">
               Undergraduate Teaching Assistant
             </h3>
-            <p className="mt-2 text-zinc-400">
+            <p className="mt-2 leading-7 text-zinc-400">
               Supported students in Data Structures through mentoring, office
               hours, exam support, and programming guidance.
             </p>
@@ -241,10 +305,29 @@ function App() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <p className="text-sm uppercase tracking-[0.3em] text-red-400">
+          Workflow
+        </p>
+
+        <h2 className="mt-3 text-3xl font-bold">How I Build</h2>
+
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          {workflow.map((step) => (
+            <div
+              key={step}
+              className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5 text-center transition hover:border-red-500"
+            >
+              <p className="font-medium">{step}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
         <div className="rounded-3xl border border-zinc-800 bg-zinc-900/90 p-8 transition hover:border-red-500 md:p-10">
           <p className="text-sm uppercase tracking-[0.3em] text-red-400">
-            Contact
+            Reach Out
           </p>
 
           <h2 className="mt-3 text-3xl font-bold">Let&apos;s connect.</h2>
@@ -263,6 +346,15 @@ function App() {
             </a>
 
             <a
+              href="/Francisco_Jaimes_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-800"
+            >
+              Resume
+            </a>
+
+            <a
               href="https://github.com/Utopias187"
               target="_blank"
               rel="noreferrer"
@@ -278,15 +370,6 @@ function App() {
               className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-800"
             >
               LinkedIn
-            </a>
-
-            <a
-              href="/Francisco_Jaimes_Resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-800"
-            >
-              Resume
             </a>
           </div>
         </div>
