@@ -11,6 +11,85 @@ function App() {
     "FastAPI",
     "MongoDB",
     "Git",
+    "GitHub",
+  ]
+
+  const expertiseTools = [
+    {
+      name: "React",
+      position: "right-[8%] bottom-[12%]",
+      accent: "border-cyan-500/50 text-cyan-300",
+    },
+    {
+      name: "Python",
+      position: "right-[26%] bottom-[18%]",
+      accent: "border-blue-500/50 text-blue-300",
+    },
+    {
+      name: "Git",
+      position: "left-[8%] bottom-[18%]",
+      accent: "border-orange-500/50 text-orange-300",
+    },
+    {
+      name: "MongoDB",
+      position: "left-[4%] top-[42%]",
+      accent: "border-green-500/50 text-green-300",
+    },
+    {
+      name: "FastAPI",
+      position: "left-[12%] top-[25%]",
+      accent: "border-emerald-500/50 text-emerald-300",
+    },
+    {
+      name: "GitHub",
+      position: "right-[12%] top-[32%]",
+      accent: "border-zinc-500/50 text-zinc-200",
+    },
+    {
+      name: "Node.js",
+      position: "right-[8%] top-[48%]",
+      accent: "border-green-500/50 text-green-300",
+    },
+    {
+      name: "Express",
+      position: "left-[30%] top-[48%]",
+      accent: "border-zinc-500/50 text-zinc-300",
+    },
+    {
+      name: "JavaScript",
+      position: "left-[32%] bottom-[28%]",
+      accent: "border-yellow-500/50 text-yellow-300",
+    },
+    {
+      name: "Rust",
+      position: "right-[32%] top-[28%]",
+      accent: "border-orange-500/50 text-orange-300",
+    },
+    {
+      name: "Tailwind",
+      position: "right-[25%] top-[42%]",
+      accent: "border-cyan-500/50 text-cyan-300",
+    },
+    {
+      name: "Vercel",
+      position: "left-[24%] top-[12%]",
+      accent: "border-zinc-500/50 text-zinc-300",
+    },
+    {
+      name: "SQL",
+      position: "left-[28%] top-[56%]",
+      accent: "border-blue-500/50 text-blue-300",
+    },
+    {
+      name: "C / C++",
+      position: "left-[18%] bottom-[34%]",
+      accent: "border-indigo-500/50 text-indigo-300",
+    },
+    {
+      name: "AI Tools",
+      position: "right-[34%] bottom-[30%]",
+      accent: "border-red-500/50 text-red-300",
+    },
   ]
 
   const projects = [
@@ -82,6 +161,13 @@ function App() {
               </a>
 
               <a
+                href="#expertise"
+                className="rounded-full px-4 py-2 hover:bg-zinc-800 hover:text-white"
+              >
+                Expertise
+              </a>
+
+              <a
                 href="#experience"
                 className="rounded-full px-4 py-2 hover:bg-zinc-800 hover:text-white"
               >
@@ -92,7 +178,7 @@ function App() {
                 href="#about"
                 className="rounded-full px-4 py-2 hover:bg-zinc-800 hover:text-white"
               >
-                About
+                Persona
               </a>
 
               <a
@@ -202,6 +288,51 @@ function App() {
                 {tech}
               </span>
             ))}
+          </div>
+        </section>
+
+        <section id="expertise" className="mx-auto max-w-6xl px-6 py-24">
+          <div className="text-center">
+            <p className="text-sm uppercase tracking-[0.35em] text-red-400">
+              Expertise
+            </p>
+
+            <h2 className="mt-4 text-5xl font-bold tracking-tight md:text-7xl">
+              Technical Expertise
+            </h2>
+          </div>
+
+          <div className="relative mx-auto mt-16 h-[620px] max-w-5xl overflow-hidden rounded-3xl border border-zinc-900 bg-zinc-950/40">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.16)_1px,transparent_1px)] bg-[length:36px_36px] opacity-20" />
+
+            <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-red-500/25 shadow-[0_0_80px_rgba(220,38,38,0.18)] md:h-[520px] md:w-[520px]">
+              <div className="absolute inset-8 rounded-full border border-red-500/20" />
+              <div className="absolute inset-20 rounded-full border border-red-500/15" />
+
+              <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-red-500/20" />
+              <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-red-500/20" />
+
+              <div className="absolute left-1/2 top-1/2 h-[90%] w-[35%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-red-500/20" />
+              <div className="absolute left-1/2 top-1/2 h-[90%] w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-red-500/20" />
+
+              <div className="absolute left-1/2 top-1/2 h-[35%] w-[95%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-red-500/20" />
+              <div className="absolute left-1/2 top-1/2 h-[65%] w-[95%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-red-500/15" />
+
+              <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-400 shadow-[0_0_30px_rgba(248,113,113,0.9)]" />
+            </div>
+
+            {expertiseTools.map((tool) => (
+              <div
+                key={tool.name}
+                className={`absolute ${tool.position} rounded-full border bg-zinc-950/85 px-4 py-2 text-sm font-medium shadow-xl backdrop-blur transition hover:-translate-y-1 hover:bg-zinc-900 ${tool.accent}`}
+              >
+                {tool.name}
+              </div>
+            ))}
+
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-zinc-600">
+              Core tools and technologies I use to build projects
+            </div>
           </div>
         </section>
 
