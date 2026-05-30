@@ -1,4 +1,8 @@
+import { useState } from "react"
+
 function App() {
+  const [activeSkillCategory, setActiveSkillCategory] = useState("foundations")
+
   const techStack = [
     "React",
     "Tailwind",
@@ -13,6 +17,64 @@ function App() {
     "Git",
     "GitHub",
   ]
+
+  const skillCategories = {
+    foundations: {
+      label: "Foundations",
+      title: "Programming Foundations",
+      description:
+        "Core concepts that underpin everything — applied across problem-solving, development, and system design.",
+      skills: [
+        "Object-Oriented Programming",
+        "Data Structures",
+        "Algorithms",
+        "Complexity Analysis",
+        "Linear Algebra",
+        "Probability & Statistics",
+        "Numerical Methods",
+        "Computer Organization",
+      ],
+    },
+    languages: {
+      label: "Languages",
+      title: "Programming Languages",
+      description:
+        "Languages I use to build command-line tools, web apps, backend systems, and technical projects.",
+      skills: ["Python", "JavaScript", "C", "C++", "Rust", "SQL", "HTML", "CSS"],
+    },
+    ai: {
+      label: "AI / ML",
+      title: "AI & Machine Learning",
+      description:
+        "Tools and concepts I use for AI-focused projects, data processing, and intelligent applications.",
+      skills: [
+        "Machine Learning",
+        "NLP",
+        "FastAPI",
+        "Streamlit",
+        "Data Processing",
+        "Model Evaluation",
+        "Prompt Engineering",
+        "AI Tooling",
+      ],
+    },
+    tools: {
+      label: "Tools",
+      title: "Developer Tools",
+      description:
+        "Tools and frameworks I use to design, build, test, deploy, and maintain software projects.",
+      skills: [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Git",
+        "GitHub",
+        "Vercel",
+      ],
+    },
+  }
 
   const expertiseTools = [
     {
@@ -165,6 +227,13 @@ function App() {
                 className="rounded-full px-4 py-2 hover:bg-zinc-800 hover:text-white"
               >
                 Expertise
+              </a>
+
+              <a
+                href="#skills"
+                className="rounded-full px-4 py-2 hover:bg-zinc-800 hover:text-white"
+              >
+                Skills
               </a>
 
               <a
@@ -332,6 +401,63 @@ function App() {
 
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-zinc-600">
               Core tools and technologies I use to build projects
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" className="mx-auto max-w-6xl px-6 py-20">
+          <div className="flex flex-wrap gap-3">
+            {Object.entries(skillCategories).map(([key, category]) => (
+              <button
+                key={key}
+                onClick={() => setActiveSkillCategory(key)}
+                className={`rounded-full border px-5 py-3 text-sm font-medium transition ${
+                  activeSkillCategory === key
+                    ? "border-red-500 bg-red-500/10 text-red-300 shadow-[0_0_25px_rgba(220,38,38,0.25)]"
+                    : "border-zinc-800 bg-zinc-950/70 text-zinc-400 hover:border-red-500/50 hover:text-white"
+                }`}
+              >
+                <span className="mr-2">•</span>
+                {category.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-6 overflow-hidden rounded-3xl border border-red-500/30 bg-zinc-900/80 shadow-[0_0_40px_rgba(220,38,38,0.12)] backdrop-blur">
+            <div className="border-b border-zinc-800 p-6">
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-3">
+                    <span className="h-3 w-3 rounded-full bg-red-400 shadow-[0_0_18px_rgba(248,113,113,0.9)]" />
+
+                    <h2 className="text-2xl font-bold">
+                      {skillCategories[activeSkillCategory].title}
+                    </h2>
+                  </div>
+
+                  <p className="mt-3 max-w-3xl font-mono text-sm leading-6 text-zinc-400">
+                    {skillCategories[activeSkillCategory].description}
+                  </p>
+                </div>
+
+                <span className="rounded-full border border-red-500/50 bg-red-500/10 px-4 py-2 text-xs font-semibold text-red-300">
+                  {skillCategories[activeSkillCategory].skills.length} skills
+                </span>
+              </div>
+            </div>
+
+            <div className="p-6">
+              <div className="flex flex-wrap gap-3">
+                {skillCategories[activeSkillCategory].skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-xl border border-zinc-800 bg-zinc-950/80 px-4 py-2 font-mono text-sm text-zinc-300 transition hover:border-red-500/60 hover:text-white"
+                  >
+                    <span className="mr-2 text-zinc-600">•</span>
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
