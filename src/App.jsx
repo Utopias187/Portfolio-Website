@@ -5,35 +5,40 @@ function App() {
       description:
         "Python CLI tool that models network throughput, detects bottlenecks, and flags low-headroom risk points as traffic scales.",
       tech: ["Python", "Networking", "CLI"],
-      link: "https://github.com/Utopias187/NetCapRisk",
+      github: "https://github.com/Utopias187/NetCapRisk",
+      demo: "",
     },
     {
       title: "PII Redaction - Redactify",
       description:
         "Local PII redaction tool using regex, NLP, PDF processing, Streamlit, and FastAPI.",
       tech: ["Python", "FastAPI", "Streamlit", "NLP"],
-      link: "https://github.com/Utopias187/PII-Redaction-Redactify",
+      github: "https://github.com/Utopias187/PII-Redaction-Redactify",
+      demo: "",
     },
     {
       title: "File Hash Scanner",
       description:
         "Cybersecurity CLI tool that scans files, computes hashes, and checks them against known signatures.",
       tech: ["Rust", "Cybersecurity", "Hashing"],
-      link: "https://github.com/Utopias187/File_hash_scanner",
+      github: "https://github.com/Utopias187/File_hash_scanner",
+      demo: "",
     },
     {
       title: "E-commerce Website",
       description:
         "Full-stack e-commerce platform with authentication, product management, checkout, and admin features.",
       tech: ["React", "Node", "Express", "MongoDB"],
-      link: "https://github.com/Utopias187/E-commerce-Website-project",
+      github: "https://github.com/Utopias187/E-commerce-Website-project",
+      demo: "",
     },
     {
       title: "Task Management System",
       description:
         "C-based command line task manager with modular CLI handling, task logic, and file storage.",
       tech: ["C", "CLI", "File Storage"],
-      link: "https://github.com/Utopias187/task-management-system",
+      github: "https://github.com/Utopias187/task-management-system",
+      demo: "",
     },
   ]
 
@@ -164,14 +169,27 @@ function App() {
                 ))}
               </div>
 
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-5 inline-block text-sm font-medium text-blue-400 hover:text-blue-300"
-              >
-                View project →
-              </a>
+              <div className="mt-5 flex flex-wrap gap-4">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-medium text-blue-400 hover:text-blue-300"
+                >
+                  GitHub →
+                </a>
+
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm font-medium text-emerald-400 hover:text-emerald-300"
+                  >
+                    Live Demo →
+                  </a>
+                )}
+              </div>
             </article>
           ))}
         </div>
@@ -260,6 +278,15 @@ function App() {
               className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-800"
             >
               LinkedIn
+            </a>
+
+            <a
+              href="/Francisco_Jaimes_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 hover:bg-zinc-800"
+            >
+              Resume
             </a>
           </div>
         </div>
