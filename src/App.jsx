@@ -22,6 +22,18 @@ import {
   SiRust,
   SiStreamlit,
 } from "react-icons/si"
+import {
+  FiZap,
+  FiClipboard,
+  FiCpu,
+  FiCode,
+  FiSearch,
+  FiCheckCircle,
+  FiBookOpen,
+  FiMail,
+  FiGithub,
+  FiLinkedin,
+} from "react-icons/fi"
 
 function SectionHeader({ eyebrow, title, description }) {
   return (
@@ -48,8 +60,8 @@ function App() {
     ["Projects", "#projects"],
     ["Expertise", "#expertise"],
     ["Skills", "#skills"],
-    ["Credentials", "#education"],
     ["Persona", "#about"],
+    ["Credentials", "#education"],
     ["Contact", "#contact"],
   ]
 
@@ -278,34 +290,76 @@ function App() {
     { value: "TTU", label: "Computer Science" },
   ]
 
-  const contributionMonths = [
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
+  const education = [
+    {
+      school: "Texas Tech University",
+      degree: "Bachelor of Science in Computer Science",
+      detail: "Minor in Mathematics",
+      badge: "Graduate",
+    },
   ]
 
-  const contributionBlocks = Array.from({ length: 84 }, (_, index) => {
-    const levels = [
-      "bg-zinc-800",
-      "bg-red-950",
-      "bg-red-800",
-      "bg-red-600",
-      "bg-red-400",
-    ]
+  const work = [
+    {
+      role: "Undergraduate Teaching Assistant",
+      org: "Texas Tech University",
+      area: "Data Structures",
+      description:
+        "Supported students through mentoring, office hours, exam support, and programming guidance.",
+    },
+  ]
 
-    return levels[index % levels.length]
-  })
-
-  const workflow = ["Idea", "Plan", "Build", "Test", "Review", "Improve"]
+  const workflow = [
+    {
+      label: "Idea",
+      icon: FiZap,
+      color: "text-yellow-400",
+      border: "border-yellow-500/40",
+      bg: "bg-yellow-500/10",
+    },
+    {
+      label: "Plan",
+      icon: FiClipboard,
+      color: "text-orange-400",
+      border: "border-orange-500/40",
+      bg: "bg-orange-500/10",
+    },
+    {
+      label: "AI Help",
+      icon: FiCpu,
+      color: "text-purple-400",
+      border: "border-purple-500/40",
+      bg: "bg-purple-500/10",
+    },
+    {
+      label: "Code",
+      icon: FiCode,
+      color: "text-cyan-400",
+      border: "border-cyan-500/40",
+      bg: "bg-cyan-500/10",
+    },
+    {
+      label: "Review",
+      icon: FiSearch,
+      color: "text-pink-400",
+      border: "border-pink-500/40",
+      bg: "bg-pink-500/10",
+    },
+    {
+      label: "Test",
+      icon: FiCheckCircle,
+      color: "text-red-400",
+      border: "border-red-500/40",
+      bg: "bg-red-500/10",
+    },
+    {
+      label: "Learn",
+      icon: FiBookOpen,
+      color: "text-zinc-300",
+      border: "border-zinc-600/60",
+      bg: "bg-zinc-800/40",
+    },
+  ]
 
   return (
     <main className="min-h-screen overflow-hidden bg-zinc-950 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,0.18),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(127,29,29,0.2),transparent_35%)] text-white">
@@ -435,7 +489,10 @@ function App() {
           </div>
         </section>
 
-        <section id="expertise" className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24">
+        <section
+          id="expertise"
+          className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24"
+        >
           <SectionHeader
             eyebrow="Expertise"
             title="Technical Expertise"
@@ -476,7 +533,10 @@ function App() {
           </div>
         </section>
 
-        <section id="skills" className="mx-auto max-w-6xl px-6 py-20 scroll-mt-24">
+        <section
+          id="skills"
+          className="mx-auto max-w-6xl px-6 py-20 scroll-mt-24"
+        >
           <SectionHeader
             eyebrow="Toolkit"
             title="Skills"
@@ -548,7 +608,10 @@ function App() {
           </div>
         </section>
 
-        <section id="projects" className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24">
+        <section
+          id="projects"
+          className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24"
+        >
           <SectionHeader
             eyebrow="Portfolio"
             title="Selected Works"
@@ -640,205 +703,205 @@ function App() {
           </div>
         </section>
 
-        <section id="about" className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24">
+        <section
+          id="about"
+          className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24"
+        >
           <SectionHeader
             eyebrow="Who I Am"
-            title="Persona"
-            description="A quick snapshot of my background, interests, education, and the kind of work I like building."
+            title="About Me"
+            description="A quick snapshot of my background, interests, and the kind of software I like building."
           />
 
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold">Hi, I&apos;m Francisco</h3>
+          <div className="mt-16 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/80 p-8 shadow-2xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60">
+              <h3 className="text-2xl font-bold">Hi, I&apos;m Francisco</h3>
 
-            <p className="mt-6 max-w-5xl text-lg leading-8 text-zinc-300">
-              I&apos;m a Computer Science graduate from Texas Tech University
-              with a minor in Mathematics. I build at the intersection of
-              software engineering, cybersecurity, AI, and full-stack
-              development.
-            </p>
+              <p className="mt-5 leading-8 text-zinc-300">
+                I&apos;m a Computer Science graduate from Texas Tech University
+                with a minor in Mathematics. I build at the intersection of
+                software engineering, cybersecurity, AI, and full-stack
+                development.
+              </p>
 
-            <p className="mt-4 max-w-5xl text-lg leading-8 text-zinc-400">
-              My current focus is building practical tools that solve real
-              problems: network risk analyzers, file integrity scanners, PII
-              redaction systems, and full-stack web applications. I care about
-              clean interfaces, useful backend logic, and projects that are easy
-              to explain in an interview.
-            </p>
+              <p className="mt-4 leading-8 text-zinc-400">
+                My current focus is building practical tools that solve real
+                problems: network risk analyzers, file integrity scanners, PII
+                redaction systems, and full-stack web applications. I care about
+                clean interfaces, useful backend logic, and projects that are
+                easy to explain in an interview.
+              </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              {[
-                "Houston, Texas",
-                "Texas Tech University",
-                "Software Engineering",
-                "AI · Cybersecurity · Full-Stack",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-zinc-800 bg-zinc-950/80 px-4 py-2 text-sm text-zinc-300 transition hover:-translate-y-1 hover:border-red-500 hover:text-white"
+              <div className="mt-6 flex flex-wrap gap-3">
+                {[
+                  "Houston, Texas",
+                  "Texas Tech University",
+                  "Software Engineering",
+                  "AI · Cybersecurity · Full-Stack",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-zinc-800 bg-zinc-950/80 px-4 py-2 text-sm text-zinc-300 transition hover:-translate-y-1 hover:border-red-500 hover:text-white"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_25px_rgba(220,38,38,0.16)]"
                 >
-                  {item}
-                </span>
+                  <p className="text-4xl font-bold text-red-400">
+                    {stat.value}
+                  </p>
+                  <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>
+                </div>
               ))}
             </div>
           </div>
+        </section>
 
-          <div id="education" className="mt-12 scroll-mt-24">
-            <h3 className="text-2xl font-bold">Education</h3>
+        <section
+          id="education"
+          className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24"
+        >
+          <SectionHeader
+            eyebrow="Credentials"
+            title="Education & Work"
+            description="The academic and professional experiences behind my technical foundation."
+          />
 
-            <div className="mt-6 rounded-3xl border border-red-500/30 bg-zinc-900/80 p-6 shadow-[0_0_45px_rgba(220,38,38,0.14)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60">
-              <div className="flex flex-wrap items-center justify-between gap-6">
-                <div className="flex items-center gap-5">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-red-500/40 bg-red-500/10 text-lg font-bold text-red-300">
-                    TTU
+          <div className="mt-14 grid gap-8 lg:grid-cols-2">
+            <div>
+              <h3 className="text-2xl font-bold">Education</h3>
+
+              <div className="mt-6 space-y-5">
+                {education.map((item) => (
+                  <div
+                    key={item.school}
+                    className="rounded-3xl border border-red-500/30 bg-zinc-900/80 p-6 shadow-[0_0_45px_rgba(220,38,38,0.14)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-6">
+                      <div className="flex items-center gap-5">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-red-500/40 bg-red-500/10 text-lg font-bold text-red-300">
+                          TTU
+                        </div>
+
+                        <div>
+                          <h4 className="text-xl font-bold">{item.school}</h4>
+                          <p className="mt-1 text-red-300">{item.degree}</p>
+                          <p className="mt-1 text-zinc-400">{item.detail}</p>
+                        </div>
+                      </div>
+
+                      <span className="rounded-full border border-red-500/40 bg-red-500/10 px-4 py-2 text-sm font-medium text-red-300">
+                        {item.badge}
+                      </span>
+                    </div>
                   </div>
+                ))}
+              </div>
+            </div>
 
-                  <div>
-                    <h4 className="text-xl font-bold">
-                      Texas Tech University
-                    </h4>
+            <div>
+              <h3 className="text-2xl font-bold">Work</h3>
 
-                    <p className="mt-1 text-red-300">
-                      Bachelor of Science in Computer Science
+              <div className="mt-6 space-y-5">
+                {work.map((item) => (
+                  <div
+                    key={item.role}
+                    className="rounded-3xl border border-zinc-800 bg-zinc-900/80 p-6 shadow-2xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(220,38,38,0.16)]"
+                  >
+                    <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
+                      {item.org}
                     </p>
 
-                    <p className="mt-1 text-zinc-400">Minor in Mathematics</p>
+                    <h4 className="mt-3 text-xl font-bold">{item.role}</h4>
+
+                    <p className="mt-1 text-red-300">{item.area}</p>
+
+                    <p className="mt-4 leading-7 text-zinc-300">
+                      {item.description}
+                    </p>
                   </div>
-                </div>
-
-                <span className="rounded-full border border-red-500/40 bg-red-500/10 px-4 py-2 text-sm font-medium text-red-300">
-                  Graduate
-                </span>
-              </div>
-
-              <div className="mt-6 border-t border-zinc-800 pt-5">
-                <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-                  Academic Experience
-                </p>
-
-                <p className="mt-3 leading-7 text-zinc-300">
-                  Undergraduate Teaching Assistant for Data Structures,
-                  supporting students through mentoring, office hours, exam
-                  support, and programming guidance.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_25px_rgba(220,38,38,0.16)]"
-              >
-                <p className="text-4xl font-bold text-red-400">{stat.value}</p>
-                <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 overflow-hidden rounded-3xl border border-red-500/30 bg-zinc-900/80 shadow-[0_0_45px_rgba(220,38,38,0.14)] backdrop-blur">
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-800 p-6">
-              <div className="flex items-center gap-3">
-                <span className="h-3 w-3 rounded-full bg-red-400 shadow-[0_0_18px_rgba(248,113,113,0.9)]" />
-
-                <h3 className="font-mono text-sm uppercase tracking-[0.2em] text-zinc-300">
-                  GitHub Activity
-                </h3>
-              </div>
-
-              <a
-                href="https://github.com/Utopias187"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm text-zinc-400 transition hover:text-red-300"
-              >
-                Utopias187 ↗
-              </a>
-            </div>
-
-            <div className="p-6">
-              <div className="mb-4 grid grid-cols-12 gap-2 text-center text-xs text-zinc-500">
-                {contributionMonths.map((month) => (
-                  <span key={month}>{month}</span>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="grid grid-cols-12 gap-2">
-                {contributionBlocks.map((color, index) => (
+        <section
+          id="contact"
+          className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24"
+        >
+          <p className="text-sm uppercase tracking-[0.45em] text-zinc-500">
+            Skills · Workflow · Identity
+          </p>
+
+          <h2 className="mt-4 text-5xl font-bold tracking-tight md:text-7xl">
+            Reach Out
+          </h2>
+
+          <div className="mt-14 rounded-3xl border border-zinc-800 bg-zinc-900/80 p-8 shadow-2xl backdrop-blur transition-all duration-300 hover:border-red-500/60 md:p-10">
+            <p className="font-mono text-sm uppercase tracking-[0.35em] text-zinc-500">
+              Workflow
+            </p>
+
+            <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              {workflow.map((step, index) => {
+                const Icon = step.icon
+
+                return (
                   <div
-                    key={index}
-                    className={`h-4 rounded-sm ${color} ring-1 ring-zinc-900`}
-                  />
-                ))}
-              </div>
+                    key={step.label}
+                    className="flex flex-1 items-center gap-4 md:block"
+                  >
+                    <div className="flex flex-col items-center">
+                      <div
+                        className={`flex h-12 w-12 items-center justify-center rounded-xl border ${step.border} ${step.bg} ${step.color} shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(220,38,38,0.18)]`}
+                      >
+                        <Icon className="text-xl" />
+                      </div>
 
-              <div className="mt-5 flex items-center justify-between text-xs text-zinc-500">
-                <span>Less</span>
+                      <p className="mt-3 text-center text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                        {step.label}
+                      </p>
+                    </div>
 
-                <div className="flex gap-1">
-                  <span className="h-3 w-3 rounded-sm bg-zinc-800" />
-                  <span className="h-3 w-3 rounded-sm bg-red-950" />
-                  <span className="h-3 w-3 rounded-sm bg-red-800" />
-                  <span className="h-3 w-3 rounded-sm bg-red-600" />
-                  <span className="h-3 w-3 rounded-sm bg-red-400" />
-                </div>
-
-                <span>More</span>
-              </div>
+                    {index < workflow.length - 1 && (
+                      <div className="hidden h-px flex-1 bg-gradient-to-r from-zinc-800 via-red-500/30 to-zinc-800 md:block" />
+                    )}
+                  </div>
+                )
+              })}
             </div>
-          </div>
-        </section>
 
-        <section className="mx-auto max-w-6xl px-6 py-24">
-          <SectionHeader
-            eyebrow="Forge"
-            title="How I Build"
-            description="My basic process for turning ideas into practical, working software."
-          />
+            <div className="my-8 h-px bg-zinc-800" />
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-            {workflow.map((step) => (
-              <div
-                key={step}
-                className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_25px_rgba(220,38,38,0.16)]"
-              >
-                <p className="font-medium">{step}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+            <p className="font-mono text-sm uppercase tracking-[0.35em] text-zinc-500">
+              Hit Me Up
+            </p>
 
-        <section id="contact" className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24">
-          <SectionHeader
-            eyebrow="Reach Out"
-            title="Let’s Connect"
-            description="I’m currently looking for new grad software engineering, AI, cybersecurity, and full-stack development opportunities."
-          />
-
-          <div className="mx-auto mt-12 max-w-3xl rounded-3xl border border-zinc-800 bg-zinc-900/90 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-red-500 md:p-10">
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
               <a
                 href="mailto:itzchoas@gmail.com"
-                className="rounded-xl bg-red-600 px-5 py-3 font-medium text-white transition hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-[0_0_25px_rgba(220,38,38,0.35)]"
+                className="flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 px-5 py-3 text-sm font-medium text-red-300 transition hover:-translate-y-1 hover:bg-red-500/20 hover:shadow-[0_0_25px_rgba(220,38,38,0.25)]"
               >
-                Email Me
-              </a>
-
-              <a
-                href="/Francisco_Jaimes_Resume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 transition hover:-translate-y-0.5 hover:bg-zinc-800 hover:text-white"
-              >
-                Resume
+                <FiMail />
+                Mail
               </a>
 
               <a
                 href="https://github.com/Utopias187"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 transition hover:-translate-y-0.5 hover:bg-zinc-800 hover:text-white"
+                className="flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/60 px-5 py-3 text-sm font-medium text-zinc-300 transition hover:-translate-y-1 hover:border-zinc-500 hover:text-white"
               >
+                <FiGithub />
                 GitHub
               </a>
 
@@ -846,8 +909,9 @@ function App() {
                 href="https://www.linkedin.com/in/francisco-jaimes-56431a238/"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 transition hover:-translate-y-0.5 hover:bg-zinc-800 hover:text-white"
+                className="flex items-center gap-2 rounded-full border border-blue-500/40 bg-blue-500/10 px-5 py-3 text-sm font-medium text-blue-300 transition hover:-translate-y-1 hover:bg-blue-500/20"
               >
+                <FiLinkedin />
                 LinkedIn
               </a>
             </div>
