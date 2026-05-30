@@ -244,6 +244,40 @@ function App() {
     },
   ]
 
+  const stats = [
+    { value: "13+", label: "GitHub Repositories" },
+    { value: "5+", label: "Featured Projects" },
+    { value: "4+", label: "Core Focus Areas" },
+    { value: "TTU", label: "Computer Science" },
+  ]
+
+  const contributionMonths = [
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+  ]
+
+  const contributionBlocks = Array.from({ length: 84 }, (_, index) => {
+    const levels = [
+      "bg-zinc-800",
+      "bg-red-950",
+      "bg-red-800",
+      "bg-red-600",
+      "bg-red-400",
+    ]
+
+    return levels[index % levels.length]
+  })
+
   const workflow = ["Idea", "Plan", "Build", "Test", "Review", "Improve"]
 
   return (
@@ -280,7 +314,7 @@ function App() {
               </a>
 
               <a
-                href="#experience"
+                href="#education"
                 className="rounded-full px-4 py-2 hover:bg-zinc-800 hover:text-white"
               >
                 Credentials
@@ -610,73 +644,157 @@ function App() {
           </div>
         </section>
 
-        <section id="about" className="mx-auto max-w-6xl px-6 py-16">
-          <p className="text-sm uppercase tracking-[0.3em] text-red-400">
-            Persona
-          </p>
+        <section id="about" className="mx-auto max-w-6xl px-6 py-24">
+          <div className="text-center">
+            <p className="text-sm uppercase tracking-[0.35em] text-red-400">
+              Who I Am
+            </p>
 
-          <h2 className="mt-3 text-3xl font-bold">About Me</h2>
+            <h2 className="mt-4 text-5xl font-bold tracking-tight md:text-7xl">
+              Persona
+            </h2>
+          </div>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_1fr]">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6">
-              <p className="leading-7 text-zinc-300">
-                I&apos;m interested in building software that feels useful,
-                clean, and practical. My work includes cybersecurity tools,
-                networking utilities, command-line applications, and full-stack
-                web projects.
-              </p>
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold">Hi, I&apos;m Francisco</h3>
+
+            <p className="mt-6 max-w-5xl text-lg leading-8 text-zinc-300">
+              I&apos;m a Computer Science graduate from Texas Tech University
+              with a minor in Mathematics. I build at the intersection of
+              software engineering, cybersecurity, AI, and full-stack
+              development.
+            </p>
+
+            <p className="mt-4 max-w-5xl text-lg leading-8 text-zinc-400">
+              My current focus is building practical tools that solve real
+              problems: network risk analyzers, file integrity scanners, PII
+              redaction systems, and full-stack web applications. I care about
+              clean interfaces, useful backend logic, and projects that are easy
+              to explain in an interview.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <span className="rounded-full border border-zinc-800 bg-zinc-950/80 px-4 py-2 text-sm text-zinc-300">
+                Houston, Texas
+              </span>
+
+              <span className="rounded-full border border-zinc-800 bg-zinc-950/80 px-4 py-2 text-sm text-zinc-300">
+                Texas Tech University
+              </span>
+
+              <span className="rounded-full border border-zinc-800 bg-zinc-950/80 px-4 py-2 text-sm text-zinc-300">
+                Software Engineering
+              </span>
+
+              <span className="rounded-full border border-zinc-800 bg-zinc-950/80 px-4 py-2 text-sm text-zinc-300">
+                AI · Cybersecurity · Full-Stack
+              </span>
             </div>
+          </div>
 
-            <div className="grid gap-4 sm:grid-cols-3">
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5">
-                <p className="text-sm uppercase text-red-400">Build</p>
-                <p className="mt-2 text-sm text-zinc-300">
-                  Practical tools with real use cases.
-                </p>
+          <div id="education" className="mt-12 scroll-mt-24">
+            <h3 className="text-2xl font-bold">Education</h3>
+
+            <div className="mt-6 rounded-3xl border border-red-500/30 bg-zinc-900/80 p-6 shadow-[0_0_45px_rgba(220,38,38,0.14)] backdrop-blur">
+              <div className="flex flex-wrap items-center justify-between gap-6">
+                <div className="flex items-center gap-5">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-red-500/40 bg-red-500/10 text-lg font-bold text-red-300">
+                    TTU
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-bold">
+                      Texas Tech University
+                    </h4>
+
+                    <p className="mt-1 text-red-300">
+                      Bachelor of Science in Computer Science
+                    </p>
+
+                    <p className="mt-1 text-zinc-400">Minor in Mathematics</p>
+                  </div>
+                </div>
+
+                <span className="rounded-full border border-red-500/40 bg-red-500/10 px-4 py-2 text-sm font-medium text-red-300">
+                  Graduate
+                </span>
               </div>
 
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5">
-                <p className="text-sm uppercase text-red-400">Focus</p>
-                <p className="mt-2 text-sm text-zinc-300">
-                  Security, AI, and full-stack systems.
+              <div className="mt-6 border-t border-zinc-800 pt-5">
+                <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
+                  Academic Experience
                 </p>
-              </div>
 
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-5">
-                <p className="text-sm uppercase text-red-400">Craft</p>
-                <p className="mt-2 text-sm text-zinc-300">
-                  Clean code and simple user experiences.
+                <p className="mt-3 leading-7 text-zinc-300">
+                  Undergraduate Teaching Assistant for Data Structures,
+                  supporting students through mentoring, office hours, exam
+                  support, and programming guidance.
                 </p>
               </div>
             </div>
           </div>
-        </section>
 
-        <section id="experience" className="mx-auto max-w-6xl px-6 py-16">
-          <p className="text-sm uppercase tracking-[0.3em] text-red-400">
-            Credentials
-          </p>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-6 text-center transition hover:border-red-500"
+              >
+                <p className="text-4xl font-bold text-red-400">{stat.value}</p>
+                <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>
+              </div>
+            ))}
+          </div>
 
-          <h2 className="mt-3 text-3xl font-bold">Education & Experience</h2>
+          <div className="mt-12 overflow-hidden rounded-3xl border border-red-500/30 bg-zinc-900/80 shadow-[0_0_45px_rgba(220,38,38,0.14)] backdrop-blur">
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-800 p-6">
+              <div className="flex items-center gap-3">
+                <span className="h-3 w-3 rounded-full bg-red-400 shadow-[0_0_18px_rgba(248,113,113,0.9)]" />
 
-          <div className="mt-8 space-y-5">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6 transition hover:border-red-500">
-              <p className="text-sm text-zinc-500">Texas Tech University</p>
-              <h3 className="mt-2 text-xl font-semibold">
-                B.S. in Computer Science
-              </h3>
-              <p className="mt-2 text-zinc-400">Minor in Mathematics</p>
+                <h3 className="font-mono text-sm uppercase tracking-[0.2em] text-zinc-300">
+                  GitHub Activity
+                </h3>
+              </div>
+
+              <a
+                href="https://github.com/Utopias187"
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-zinc-400 hover:text-red-300"
+              >
+                Utopias187 ↗
+              </a>
             </div>
 
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6 transition hover:border-red-500">
-              <p className="text-sm text-zinc-500">Academic Experience</p>
-              <h3 className="mt-2 text-xl font-semibold">
-                Undergraduate Teaching Assistant
-              </h3>
-              <p className="mt-2 leading-7 text-zinc-400">
-                Supported students in Data Structures through mentoring, office
-                hours, exam support, and programming guidance.
-              </p>
+            <div className="p-6">
+              <div className="mb-4 grid grid-cols-12 gap-2 text-center text-xs text-zinc-500">
+                {contributionMonths.map((month) => (
+                  <span key={month}>{month}</span>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-12 gap-2">
+                {contributionBlocks.map((color, index) => (
+                  <div
+                    key={index}
+                    className={`h-4 rounded-sm ${color} ring-1 ring-zinc-900`}
+                  />
+                ))}
+              </div>
+
+              <div className="mt-5 flex items-center justify-between text-xs text-zinc-500">
+                <span>Less</span>
+
+                <div className="flex gap-1">
+                  <span className="h-3 w-3 rounded-sm bg-zinc-800" />
+                  <span className="h-3 w-3 rounded-sm bg-red-950" />
+                  <span className="h-3 w-3 rounded-sm bg-red-800" />
+                  <span className="h-3 w-3 rounded-sm bg-red-600" />
+                  <span className="h-3 w-3 rounded-sm bg-red-400" />
+                </div>
+
+                <span>More</span>
+              </div>
             </div>
           </div>
         </section>
