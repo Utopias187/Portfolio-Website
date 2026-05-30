@@ -1,4 +1,27 @@
 import { useState } from "react"
+import {
+  SiPython,
+  SiJavascript,
+  SiTypescript,
+  SiCplusplus,
+  SiR,
+  SiMysql,
+  SiHtml5,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiFastapi,
+  SiTailwindcss,
+  SiPostgresql,
+  SiMongodb,
+  SiPrisma,
+  SiGit,
+  SiGithub,
+  SiVercel,
+  SiRust,
+  SiStreamlit,
+} from "react-icons/si"
 
 function App() {
   const [activeSkillCategory, setActiveSkillCategory] = useState("foundations")
@@ -37,10 +60,27 @@ function App() {
     },
     languages: {
       label: "Languages",
-      title: "Programming Languages",
+      title: "Languages & Frameworks",
       description:
-        "Languages I use to build command-line tools, web apps, backend systems, and technical projects.",
-      skills: ["Python", "JavaScript", "C", "C++", "Rust", "SQL", "HTML", "CSS"],
+        "Languages and frameworks used across data work, backend logic, and frontend interfaces.",
+      skills: [
+        { name: "Python", icon: SiPython, color: "text-blue-400" },
+        { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+        { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+        { name: "C++", icon: SiCplusplus, color: "text-blue-400" },
+        { name: "R", icon: SiR, color: "text-sky-400" },
+        { name: "SQL", icon: SiMysql, color: "text-cyan-300" },
+        { name: "HTML / CSS", icon: SiHtml5, color: "text-orange-400" },
+        { name: "React", icon: SiReact, color: "text-cyan-400" },
+        { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+        { name: "Node.js", icon: SiNodedotjs, color: "text-green-400" },
+        { name: "Express.js", icon: SiExpress, color: "text-zinc-300" },
+        { name: "FastAPI", icon: SiFastapi, color: "text-emerald-400" },
+        { name: "TailwindCSS", icon: SiTailwindcss, color: "text-cyan-400" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
+        { name: "MongoDB", icon: SiMongodb, color: "text-green-400" },
+        { name: "Prisma ORM", icon: SiPrisma, color: "text-zinc-200" },
+      ],
     },
     ai: {
       label: "AI / ML",
@@ -64,14 +104,17 @@ function App() {
       description:
         "Tools and frameworks I use to design, build, test, deploy, and maintain software projects.",
       skills: [
-        "React",
-        "Tailwind CSS",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Git",
-        "GitHub",
-        "Vercel",
+        { name: "Git", icon: SiGit, color: "text-orange-500" },
+        { name: "GitHub", icon: SiGithub, color: "text-zinc-200" },
+        { name: "Vercel", icon: SiVercel, color: "text-white" },
+        { name: "React", icon: SiReact, color: "text-cyan-400" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
+        { name: "Node.js", icon: SiNodedotjs, color: "text-green-400" },
+        { name: "Express", icon: SiExpress, color: "text-zinc-300" },
+        { name: "MongoDB", icon: SiMongodb, color: "text-green-400" },
+        { name: "FastAPI", icon: SiFastapi, color: "text-emerald-400" },
+        { name: "Streamlit", icon: SiStreamlit, color: "text-red-400" },
+        { name: "Rust", icon: SiRust, color: "text-orange-400" },
       ],
     },
   }
@@ -423,7 +466,7 @@ function App() {
             ))}
           </div>
 
-          <div className="mt-6 overflow-hidden rounded-3xl border border-red-500/30 bg-zinc-900/80 shadow-[0_0_40px_rgba(220,38,38,0.12)] backdrop-blur">
+          <div className="mt-6 overflow-hidden rounded-3xl border border-red-500/30 bg-zinc-900/80 shadow-[0_0_45px_rgba(220,38,38,0.16)] backdrop-blur">
             <div className="border-b border-zinc-800 p-6">
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
@@ -448,15 +491,24 @@ function App() {
 
             <div className="p-6">
               <div className="flex flex-wrap gap-3">
-                {skillCategories[activeSkillCategory].skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-xl border border-zinc-800 bg-zinc-950/80 px-4 py-2 font-mono text-sm text-zinc-300 transition hover:border-red-500/60 hover:text-white"
-                  >
-                    <span className="mr-2 text-zinc-600">•</span>
-                    {skill}
-                  </span>
-                ))}
+                {skillCategories[activeSkillCategory].skills.map((skill) => {
+                  const Icon = skill.icon
+
+                  return (
+                    <span
+                      key={skill.name || skill}
+                      className="flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-950/80 px-4 py-2 font-mono text-sm text-zinc-300 transition hover:border-red-500/60 hover:bg-zinc-900 hover:text-white"
+                    >
+                      {Icon ? (
+                        <Icon className={`text-base ${skill.color}`} />
+                      ) : (
+                        <span className="text-zinc-600">•</span>
+                      )}
+
+                      {skill.name || skill}
+                    </span>
+                  )
+                })}
               </div>
             </div>
           </div>
