@@ -66,6 +66,51 @@ function App() {
     ["Contact", "#contact"],
   ]
 
+  const heroOrbitTools = [
+    {
+      name: "React",
+      icon: SiReact,
+      position: "left-1/2 top-[2%] -translate-x-1/2",
+      color: "text-cyan-400",
+    },
+    {
+      name: "Python",
+      icon: SiPython,
+      position: "right-[8%] top-[55%]",
+      color: "text-blue-400",
+    },
+    {
+      name: "Tailwind",
+      icon: SiTailwindcss,
+      position: "left-[6%] top-[38%]",
+      color: "text-cyan-400",
+    },
+    {
+      name: "Node.js",
+      icon: SiNodedotjs,
+      position: "left-[7%] bottom-[22%]",
+      color: "text-green-400",
+    },
+    {
+      name: "Git",
+      icon: SiGit,
+      position: "left-1/2 bottom-[2%] -translate-x-1/2",
+      color: "text-orange-400",
+    },
+    {
+      name: "Rust",
+      icon: SiRust,
+      position: "right-[22%] bottom-[16%]",
+      color: "text-orange-400",
+    },
+    {
+      name: "TypeScript",
+      icon: SiTypescript,
+      position: "right-[5%] top-[30%]",
+      color: "text-blue-400",
+    },
+  ]
+
   const techStack = [
     "React",
     "Tailwind",
@@ -384,7 +429,7 @@ function App() {
         <header className="sticky top-0 z-50 mx-auto max-w-6xl px-6 py-5">
           <nav className="flex items-center justify-between rounded-3xl border border-zinc-800/80 bg-zinc-950/70 px-5 py-4 shadow-2xl shadow-black/40 backdrop-blur-xl">
             <a
-              href="#"
+              href="#home"
               className="text-lg font-bold tracking-tight text-red-400 transition hover:text-red-300"
             >
               francisco.dev
@@ -413,80 +458,82 @@ function App() {
           </nav>
         </header>
 
-        <section className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[1.4fr_0.8fr] lg:items-center">
-          <div>
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-red-400">
-              Software Engineer
+        <section
+          id="home"
+          className="relative mx-auto flex min-h-[760px] max-w-6xl items-center justify-center px-6 py-20 text-center"
+        >
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-zinc-800/80" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-zinc-800/70" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-zinc-800/60" />
+
+          {heroOrbitTools.map((tool) => {
+            const Icon = tool.icon
+
+            return (
+              <div
+                key={tool.name}
+                className={`absolute ${tool.position} hidden flex-col items-center gap-2 md:flex`}
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-950/80 shadow-xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60">
+                  <Icon className={`text-xl ${tool.color}`} />
+                </div>
+
+                <p className="text-sm text-zinc-500">{tool.name}</p>
+              </div>
+            )
+          })}
+
+          <div className="relative z-10 mx-auto max-w-5xl">
+            <p className="text-sm uppercase tracking-[0.45em] text-zinc-500">
+              Hello! I&apos;m
             </p>
 
-            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
-              Building security-minded software across AI, cybersecurity, and
-              full-stack development.
+            <h1 className="mt-6 text-5xl font-bold tracking-tight md:text-7xl">
+              Francisco Jaimes
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
-              I&apos;m Francisco Jaimes, a Computer Science graduate from Texas
-              Tech University with a minor in Mathematics. I build practical
-              tools that solve real problems, from network risk analyzers and
-              file scanners to full-stack web applications.
+            <p className="mt-5 text-xl text-zinc-400 md:text-2xl">
+              A security-minded{" "}
+              <span className="text-red-400">Software Engineer</span> building
+              across <span className="text-red-300">AI</span>,{" "}
+              <span className="text-red-300">cybersecurity</span>, and{" "}
+              <span className="text-red-300">full-stack development</span>.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <h2 className="mt-8 bg-gradient-to-r from-red-500 via-orange-300 to-red-400 bg-clip-text text-6xl font-black tracking-tight text-transparent md:text-8xl">
+              BUILDER
+            </h2>
+
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
+              I build practical tools that solve real problems — from network
+              risk analyzers and file scanners to full-stack web applications.
+            </p>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
               <a
                 href="#projects"
-                className="rounded-xl bg-red-600 px-5 py-3 font-medium text-white transition hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-[0_0_25px_rgba(220,38,38,0.35)]"
+                className="rounded-full border border-red-500/40 bg-red-500/10 px-6 py-3 font-medium text-red-300 transition hover:-translate-y-1 hover:bg-red-500/20 hover:shadow-[0_0_25px_rgba(220,38,38,0.25)]"
               >
                 View Projects
+              </a>
+
+              <a
+                href="/Francisco_Jaimes_Resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-zinc-700 bg-zinc-900/70 px-6 py-3 font-medium text-zinc-200 transition hover:-translate-y-1 hover:border-red-500/60 hover:text-white"
+              >
+                Resume & CV
               </a>
 
               <a
                 href="https://github.com/Utopias187"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 transition hover:-translate-y-0.5 hover:bg-zinc-900 hover:text-white"
+                className="rounded-full border border-zinc-700 bg-zinc-900/70 px-6 py-3 font-medium text-zinc-200 transition hover:-translate-y-1 hover:border-red-500/60 hover:text-white"
               >
                 GitHub
               </a>
-
-              <a
-                href="https://www.linkedin.com/in/francisco-jaimes-56431a238/"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-zinc-200 transition hover:-translate-y-0.5 hover:bg-zinc-900 hover:text-white"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/80 p-6 shadow-2xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(220,38,38,0.16)]">
-            <p className="text-sm uppercase tracking-[0.3em] text-red-400">
-              Focus
-            </p>
-
-            <h2 className="mt-4 text-2xl font-bold">
-              Security-minded builder
-            </h2>
-
-            <p className="mt-4 leading-7 text-zinc-300">
-              I like building projects that combine clean interfaces, useful
-              backend logic, and practical problem solving.
-            </p>
-
-            <div className="mt-6 grid gap-3">
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/80 p-4">
-                <p className="text-sm text-zinc-500">Main interests</p>
-                <p className="mt-1 font-medium">
-                  AI · Cybersecurity · Full-Stack
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/80 p-4">
-                <p className="text-sm text-zinc-500">Currently seeking</p>
-                <p className="mt-1 font-medium">
-                  New grad software engineering roles
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -562,6 +609,7 @@ function App() {
             {Object.entries(skillCategories).map(([key, category]) => (
               <button
                 key={key}
+                type="button"
                 onClick={() => setActiveSkillCategory(key)}
                 className={`rounded-full border px-5 py-3 text-sm font-medium transition-all duration-300 ${
                   activeSkillCategory === key
@@ -722,61 +770,109 @@ function App() {
           id="about"
           className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24"
         >
-          <SectionHeader
-            eyebrow="Who I Am"
-            title="About Me"
-            description="A quick snapshot of my background, interests, and the kind of software I like building."
-          />
+          <p className="text-sm uppercase tracking-[0.45em] text-zinc-500">
+            Who I Am
+          </p>
 
-          <div className="mt-16 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/80 p-8 shadow-2xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60">
-              <h3 className="text-2xl font-bold">Hi, I&apos;m Francisco</h3>
+          <h2 className="mt-4 text-5xl font-bold tracking-tight md:text-7xl">
+            About Me
+          </h2>
 
-              <p className="mt-5 leading-8 text-zinc-300">
-                I&apos;m a Computer Science graduate from Texas Tech University
-                with a minor in Mathematics. I build at the intersection of
-                software engineering, cybersecurity, AI, and full-stack
-                development.
+          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/80 p-8 shadow-2xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(220,38,38,0.16)]">
+              <p className="font-mono text-sm uppercase tracking-[0.25em] text-zinc-500">
+                Location · Hover to Explore
               </p>
 
-              <p className="mt-4 leading-8 text-zinc-400">
-                My current focus is building practical tools that solve real
-                problems: network risk analyzers, file integrity scanners, PII
-                redaction systems, and full-stack web applications. I care about
-                clean interfaces, useful backend logic, and projects that are
-                easy to explain in an interview.
-              </p>
+              <div className="mt-16">
+                <h3 className="text-4xl font-bold tracking-tight">
+                  Houston, Texas
+                </h3>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                {[
-                  "Houston, Texas",
-                  "Texas Tech University",
-                  "Software Engineering",
-                  "AI · Cybersecurity · Full-Stack",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-zinc-800 bg-zinc-950/80 px-4 py-2 text-sm text-zinc-300 transition hover:-translate-y-1 hover:border-red-500 hover:text-white"
-                  >
-                    {item}
-                  </span>
-                ))}
+                <p className="mt-4 font-mono text-sm text-zinc-400">
+                  29.7604° N, 95.3698° W
+                </p>
+
+                <p className="mt-1 font-mono text-sm text-zinc-500">
+                  Central Time · United States
+                </p>
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_25px_rgba(220,38,38,0.16)]"
-                >
-                  <p className="text-4xl font-bold text-red-400">
-                    {stat.value}
-                  </p>
-                  <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>
-                </div>
-              ))}
+            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/80 p-8 shadow-2xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(220,38,38,0.16)]">
+              <p className="font-mono text-sm uppercase tracking-[0.25em] text-zinc-500">
+                / About
+              </p>
+
+              <p className="mt-8 leading-8 text-zinc-300">
+                I&apos;m Francisco Jaimes — a Computer Science graduate from
+                Texas Tech University with a minor in Mathematics. I build
+                practical software across cybersecurity, AI, and full-stack
+                development, with a focus on tools that solve real problems.
+              </p>
+
+              <div className="my-6 h-px bg-zinc-800" />
+
+              <p className="italic text-zinc-500">
+                “Building clean, useful software with real-world purpose.”
+              </p>
             </div>
+          </div>
+
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-purple-500/30 bg-purple-500/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/60 hover:shadow-[0_0_25px_rgba(168,85,247,0.16)]">
+              <p className="font-mono text-sm uppercase tracking-[0.25em] text-purple-300">
+                Growth
+              </p>
+
+              <p className="mt-5 leading-7 text-zinc-300">
+                Constantly learning through projects, debugging, and improving
+                how I design and explain technical systems.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-red-500/30 bg-red-500/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-red-400/60 hover:shadow-[0_0_25px_rgba(220,38,38,0.18)]">
+              <p className="font-mono text-sm uppercase tracking-[0.25em] text-red-300">
+                Focus
+              </p>
+
+              <p className="mt-5 leading-7 text-zinc-300">
+                Deep interest in cybersecurity tools, full-stack systems, AI
+                utilities, and software that is practical to use.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/60 hover:shadow-[0_0_25px_rgba(249,115,22,0.16)]">
+              <p className="font-mono text-sm uppercase tracking-[0.25em] text-orange-300">
+                Craft
+              </p>
+
+              <p className="mt-5 leading-7 text-zinc-300">
+                I care about clean interfaces, useful backend logic, readable
+                code, and projects that are easy to explain.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <a
+              href="#education"
+              className="rounded-full border border-red-500/50 bg-red-500/10 px-6 py-3 font-medium text-red-300 transition hover:-translate-y-1 hover:bg-red-500/20 hover:shadow-[0_0_25px_rgba(220,38,38,0.25)]"
+            >
+              View Experience →
+            </a>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_25px_rgba(220,38,38,0.16)]"
+              >
+                <p className="text-4xl font-bold text-red-400">{stat.value}</p>
+                <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -824,19 +920,11 @@ function App() {
                   </div>
 
                   <div className="mt-6 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/80 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(220,38,38,0.16)]">
-                    {item.image ? (
-                      <img
-                        src={item.image}
-                        alt={`${item.school} campus`}
-                        className="h-44 w-full object-cover opacity-60 grayscale transition duration-500 hover:scale-105 hover:opacity-80"
-                      />
-                    ) : (
-                      <div className="flex h-44 items-center justify-center bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.24),transparent_45%)]">
-                        <p className="text-3xl font-bold text-zinc-700">
-                          Texas Tech University
-                        </p>
-                      </div>
-                    )}
+                    <img
+                      src={item.image}
+                      alt={`${item.school} campus`}
+                      className="h-44 w-full object-cover opacity-60 grayscale transition duration-500 hover:scale-105 hover:opacity-80"
+                    />
                   </div>
                 </div>
               ))}
@@ -907,14 +995,14 @@ function App() {
               Workflow
             </p>
 
-            <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-start">
               {workflow.map((step, index) => {
                 const Icon = step.icon
 
                 return (
                   <div
                     key={step.label}
-                    className="flex flex-1 items-center gap-4 md:block"
+                    className="flex flex-1 items-start gap-4"
                   >
                     <div className="flex flex-col items-center">
                       <div
@@ -929,7 +1017,7 @@ function App() {
                     </div>
 
                     {index < workflow.length - 1 && (
-                      <div className="hidden h-px flex-1 bg-gradient-to-r from-zinc-800 via-red-500/30 to-zinc-800 md:block" />
+                      <div className="mt-6 hidden h-px flex-1 bg-gradient-to-r from-zinc-800 via-red-500/30 to-zinc-800 md:block" />
                     )}
                   </div>
                 )
