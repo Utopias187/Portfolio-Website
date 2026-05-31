@@ -267,7 +267,7 @@ function App() {
 
   const education = [
     {
-      year: "2022 – 2026",
+      year: "2021 – 2026",
       school: "Texas Tech University",
       degree: "Bachelor of Science",
       field: "Computer Science",
