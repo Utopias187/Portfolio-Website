@@ -33,6 +33,7 @@ import {
   FiMail,
   FiGithub,
   FiLinkedin,
+  FiBriefcase,
 } from "react-icons/fi"
 
 function SectionHeader({ eyebrow, title, description }) {
@@ -61,7 +62,7 @@ function App() {
     ["Expertise", "#expertise"],
     ["Skills", "#skills"],
     ["Persona", "#about"],
-    ["Credentials", "#education"],
+    ["Experience", "#education"],
     ["Contact", "#contact"],
   ]
 
@@ -292,20 +293,34 @@ function App() {
 
   const education = [
     {
+      year: "2022 – 2026",
       school: "Texas Tech University",
-      degree: "Bachelor of Science in Computer Science",
+      degree: "Bachelor of Science",
+      field: "Computer Science",
       detail: "Minor in Mathematics",
-      badge: "Graduate",
+      location: "Lubbock, Texas",
+      image: "/ttu-campus.jpg",
     },
   ]
 
   const work = [
     {
-      role: "Undergraduate Teaching Assistant",
-      org: "Texas Tech University",
-      area: "Data Structures",
+      date: "Jun 2024 – Jul 2024",
+      role: "Marketing & Content Creation Intern",
+      company: "LokaLingo",
+      location: "Tokyo, Japan",
       description:
-        "Supported students through mentoring, office hours, exam support, and programming guidance.",
+        "Created and curated social media content, assisted with content strategy, blog posts, newsletters, and audience research.",
+      tags: ["Content Strategy", "Marketing", "Research", "Communication"],
+    },
+    {
+      date: "Oct 2023 – Feb 2024",
+      role: "Student Services",
+      company: "Texas Tech Hospitality",
+      location: "Lubbock, Texas",
+      description:
+        "Delivered customer service in a fast-paced environment while resolving guest issues, maintaining service quality, and supporting health and safety procedures.",
+      tags: ["Customer Service", "Operations", "Communication", "Teamwork"],
     },
   ]
 
@@ -769,67 +784,108 @@ function App() {
           id="education"
           className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24"
         >
-          <SectionHeader
-            eyebrow="Credentials"
-            title="Education & Work"
-            description="The academic and professional experiences behind my technical foundation."
-          />
+          <p className="text-sm uppercase tracking-[0.45em] text-zinc-500">
+            Education & Work
+          </p>
 
-          <div className="mt-14 grid gap-8 lg:grid-cols-2">
+          <h2 className="mt-4 text-5xl font-bold tracking-tight md:text-7xl">
+            Experience
+          </h2>
+
+          <div className="mt-16 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <h3 className="text-2xl font-bold">Education</h3>
+              {education.map((item) => (
+                <div key={item.school}>
+                  <div className="flex gap-5">
+                    <div className="flex flex-col items-center">
+                      <span className="h-3 w-3 rounded-full bg-red-400 shadow-[0_0_18px_rgba(248,113,113,0.9)]" />
+                      <span className="mt-2 h-24 w-px bg-zinc-800" />
+                    </div>
 
-              <div className="mt-6 space-y-5">
-                {education.map((item) => (
-                  <div
-                    key={item.school}
-                    className="rounded-3xl border border-red-500/30 bg-zinc-900/80 p-6 shadow-[0_0_45px_rgba(220,38,38,0.14)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60"
-                  >
-                    <div className="flex flex-wrap items-center justify-between gap-6">
-                      <div className="flex items-center gap-5">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-red-500/40 bg-red-500/10 text-lg font-bold text-red-300">
-                          TTU
-                        </div>
+                    <div>
+                      <p className="font-mono text-sm font-semibold tracking-[0.2em] text-red-400">
+                        {item.year}
+                      </p>
 
-                        <div>
-                          <h4 className="text-xl font-bold">{item.school}</h4>
-                          <p className="mt-1 text-red-300">{item.degree}</p>
-                          <p className="mt-1 text-zinc-400">{item.detail}</p>
-                        </div>
-                      </div>
+                      <h3 className="mt-4 text-2xl font-bold">
+                        {item.degree}
+                      </h3>
 
-                      <span className="rounded-full border border-red-500/40 bg-red-500/10 px-4 py-2 text-sm font-medium text-red-300">
-                        {item.badge}
-                      </span>
+                      <p className="mt-2 text-zinc-300">{item.field}</p>
+
+                      <p className="mt-1 text-sm text-zinc-500">
+                        {item.school} · {item.location}
+                      </p>
+
+                      <p className="mt-1 text-sm text-zinc-400">
+                        {item.detail}
+                      </p>
                     </div>
                   </div>
-                ))}
-              </div>
+
+                  <div className="mt-6 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/80 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(220,38,38,0.16)]">
+                    {item.image ? (
+                      <img
+                        src={item.image}
+                        alt={`${item.school} campus`}
+                        className="h-44 w-full object-cover opacity-60 grayscale transition duration-500 hover:scale-105 hover:opacity-80"
+                      />
+                    ) : (
+                      <div className="flex h-44 items-center justify-center bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.24),transparent_45%)]">
+                        <p className="text-3xl font-bold text-zinc-700">
+                          Texas Tech University
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold">Work</h3>
+            <div className="space-y-6">
+              {work.map((job) => (
+                <article
+                  key={`${job.company}-${job.role}`}
+                  className="rounded-3xl border border-red-500/30 bg-zinc-900/80 p-7 shadow-2xl backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-red-500/70 hover:shadow-[0_0_35px_rgba(220,38,38,0.18)]"
+                >
+                  <div className="flex items-start justify-between gap-6">
+                    <div>
+                      <p className="font-mono text-sm uppercase tracking-[0.2em] text-red-400">
+                        {job.date}
+                      </p>
 
-              <div className="mt-6 space-y-5">
-                {work.map((item) => (
-                  <div
-                    key={item.role}
-                    className="rounded-3xl border border-zinc-800 bg-zinc-900/80 p-6 shadow-2xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(220,38,38,0.16)]"
-                  >
-                    <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-                      {item.org}
-                    </p>
+                      <h3 className="mt-4 text-2xl font-bold">{job.role}</h3>
 
-                    <h4 className="mt-3 text-xl font-bold">{item.role}</h4>
+                      <p className="mt-3 font-semibold text-red-300">
+                        {job.company}
+                      </p>
 
-                    <p className="mt-1 text-red-300">{item.area}</p>
+                      <p className="mt-1 text-sm text-zinc-500">
+                        {job.location}
+                      </p>
+                    </div>
 
-                    <p className="mt-4 leading-7 text-zinc-300">
-                      {item.description}
-                    </p>
+                    <div className="hidden h-12 w-12 items-center justify-center rounded-xl border border-red-500/40 bg-red-500/10 text-red-300 md:flex">
+                      <FiBriefcase className="text-xl" />
+                    </div>
                   </div>
-                ))}
-              </div>
+
+                  <p className="mt-6 leading-7 text-zinc-300">
+                    {job.description}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {job.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1 font-mono text-xs text-red-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
