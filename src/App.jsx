@@ -37,7 +37,7 @@ import {
 } from "react-icons/fi"
 
 const HERO_WORDS = ["BUILDER", "PROGRAMMER", "DEVELOPER", "ENGINEER", "CREATOR"]
-const RESUME_PATH = "/Francisco_Jaimes_Resume.pdf"
+const RESUME_PATH = "/resume.pdf"
 
 function SectionHeader({ eyebrow, title, description }) {
   return (
@@ -121,21 +121,6 @@ function App() {
       position: "right-[5%] top-[30%]",
       color: "text-blue-400",
     },
-  ]
-
-  const techStack = [
-    "React",
-    "Tailwind",
-    "JavaScript",
-    "Python",
-    "Rust",
-    "C",
-    "Node.js",
-    "Express",
-    "FastAPI",
-    "MongoDB",
-    "Git",
-    "GitHub",
   ]
 
   const skillCategories = {
@@ -243,8 +228,6 @@ function App() {
         "Built to help identify capacity issues, traffic limits, and infrastructure risk points through command-line analysis.",
       tech: ["Python", "Networking", "CLI"],
       github: "https://github.com/Utopias187/NetCapRisk",
-      demo: "",
-      image: "",
     },
     {
       title: "PII Redaction - Redactify",
@@ -254,8 +237,6 @@ function App() {
         "Designed to detect and redact sensitive information from documents while keeping processing local and privacy-focused.",
       tech: ["Python", "FastAPI", "Streamlit", "NLP"],
       github: "https://github.com/Utopias187/PII-Redaction-Redactify",
-      demo: "",
-      image: "",
     },
     {
       title: "File Hash Scanner",
@@ -265,8 +246,6 @@ function App() {
         "Focused on file integrity, hash verification, and basic security scanning through a lightweight CLI workflow.",
       tech: ["Rust", "Cybersecurity", "Hashing"],
       github: "https://github.com/Utopias187/File_hash_scanner",
-      demo: "",
-      image: "",
     },
     {
       title: "E-commerce Website",
@@ -276,8 +255,6 @@ function App() {
         "Created as a full-stack shopping platform with user flows, backend routes, database storage, and admin features.",
       tech: ["React", "Node", "Express", "MongoDB"],
       github: "https://github.com/Utopias187/E-commerce-Website-project",
-      demo: "",
-      image: "",
     },
   ]
 
@@ -453,19 +430,6 @@ function App() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 pt-4">
-          <div className="flex flex-wrap gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 backdrop-blur">
-            {techStack.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-zinc-800 bg-zinc-950/90 px-4 py-2 text-sm text-zinc-300 transition hover:-translate-y-1 hover:border-red-500 hover:text-white"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </section>
-
         <section
           id="expertise"
           className="mx-auto max-w-6xl px-6 py-24 scroll-mt-24"
@@ -540,6 +504,7 @@ function App() {
                 <div>
                   <div className="flex items-center gap-3">
                     <span className="h-3 w-3 rounded-full bg-red-400 shadow-[0_0_18px_rgba(248,113,113,0.9)]" />
+
                     <h2 className="text-2xl font-bold">
                       {skillCategories[activeSkillCategory].title}
                     </h2>
@@ -571,6 +536,7 @@ function App() {
                       ) : (
                         <span className="text-zinc-600">•</span>
                       )}
+
                       {skill.name || skill}
                     </span>
                   )
@@ -602,11 +568,13 @@ function App() {
                       {project.title}
                     </p>
                   </div>
+
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
                 </div>
 
                 <div className="p-6">
                   <h3 className="text-2xl font-bold">{project.title}</h3>
+
                   <p className="mt-3 leading-7 text-zinc-300">
                     {project.description}
                   </p>
@@ -615,6 +583,7 @@ function App() {
                     <span className="rounded-full bg-red-600 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-white">
                       Scope
                     </span>
+
                     <span className="rounded-full bg-zinc-800 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-300">
                       Tech
                     </span>
@@ -728,8 +697,8 @@ function App() {
                   color === "purple"
                     ? "border-purple-500/30 bg-purple-500/5 hover:border-purple-400/60"
                     : color === "red"
-                    ? "border-red-500/30 bg-red-500/5 hover:border-red-400/60"
-                    : "border-orange-500/30 bg-orange-500/5 hover:border-orange-400/60"
+                      ? "border-red-500/30 bg-red-500/5 hover:border-red-400/60"
+                      : "border-orange-500/30 bg-orange-500/5 hover:border-orange-400/60"
                 }`}
               >
                 <p
@@ -737,12 +706,13 @@ function App() {
                     color === "purple"
                       ? "text-purple-300"
                       : color === "red"
-                      ? "text-red-300"
-                      : "text-orange-300"
+                        ? "text-red-300"
+                        : "text-orange-300"
                   }`}
                 >
                   {title}
                 </p>
+
                 <p className="mt-5 leading-7 text-zinc-300">{text}</p>
               </div>
             ))}
