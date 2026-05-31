@@ -37,6 +37,7 @@ import {
 } from "react-icons/fi"
 
 const HERO_WORDS = ["BUILDER", "PROGRAMMER", "DEVELOPER", "ENGINEER", "CREATOR"]
+const RESUME_PATH = "/Francisco_Jaimes_Resume.pdf"
 
 function SectionHeader({ eyebrow, title, description }) {
   return (
@@ -216,81 +217,21 @@ function App() {
   }
 
   const expertiseTools = [
-    {
-      name: "React",
-      position: "right-[8%] bottom-[12%]",
-      accent: "border-cyan-500/50 text-cyan-300",
-    },
-    {
-      name: "Python",
-      position: "right-[26%] bottom-[18%]",
-      accent: "border-blue-500/50 text-blue-300",
-    },
-    {
-      name: "Git",
-      position: "left-[8%] bottom-[18%]",
-      accent: "border-orange-500/50 text-orange-300",
-    },
-    {
-      name: "MongoDB",
-      position: "left-[4%] top-[42%]",
-      accent: "border-green-500/50 text-green-300",
-    },
-    {
-      name: "FastAPI",
-      position: "left-[12%] top-[25%]",
-      accent: "border-emerald-500/50 text-emerald-300",
-    },
-    {
-      name: "GitHub",
-      position: "right-[12%] top-[32%]",
-      accent: "border-zinc-500/50 text-zinc-200",
-    },
-    {
-      name: "Node.js",
-      position: "right-[8%] top-[48%]",
-      accent: "border-green-500/50 text-green-300",
-    },
-    {
-      name: "Express",
-      position: "left-[30%] top-[48%]",
-      accent: "border-zinc-500/50 text-zinc-300",
-    },
-    {
-      name: "JavaScript",
-      position: "left-[32%] bottom-[28%]",
-      accent: "border-yellow-500/50 text-yellow-300",
-    },
-    {
-      name: "Rust",
-      position: "right-[32%] top-[28%]",
-      accent: "border-orange-500/50 text-orange-300",
-    },
-    {
-      name: "Tailwind",
-      position: "right-[25%] top-[42%]",
-      accent: "border-cyan-500/50 text-cyan-300",
-    },
-    {
-      name: "Vercel",
-      position: "left-[24%] top-[12%]",
-      accent: "border-zinc-500/50 text-zinc-300",
-    },
-    {
-      name: "SQL",
-      position: "left-[28%] top-[56%]",
-      accent: "border-blue-500/50 text-blue-300",
-    },
-    {
-      name: "C / C++",
-      position: "left-[18%] bottom-[34%]",
-      accent: "border-indigo-500/50 text-indigo-300",
-    },
-    {
-      name: "AI Tools",
-      position: "right-[34%] bottom-[30%]",
-      accent: "border-red-500/50 text-red-300",
-    },
+    { name: "React", position: "left-[58%] top-[17%]", accent: "border-cyan-500/50 text-cyan-300" },
+    { name: "Python", position: "left-[60%] top-[72%]", accent: "border-blue-500/50 text-blue-300" },
+    { name: "Git", position: "left-[23%] top-[72%]", accent: "border-orange-500/50 text-orange-300" },
+    { name: "MongoDB", position: "left-[18%] top-[38%]", accent: "border-green-500/50 text-green-300" },
+    { name: "FastAPI", position: "left-[24%] top-[25%]", accent: "border-emerald-500/50 text-emerald-300" },
+    { name: "GitHub", position: "left-[72%] top-[30%]", accent: "border-zinc-500/50 text-zinc-200" },
+    { name: "Node.js", position: "left-[74%] top-[45%]", accent: "border-green-500/50 text-green-300" },
+    { name: "Express", position: "left-[37%] top-[47%]", accent: "border-zinc-500/50 text-zinc-300" },
+    { name: "JavaScript", position: "left-[39%] top-[62%]", accent: "border-yellow-500/50 text-yellow-300" },
+    { name: "Rust", position: "left-[61%] top-[28%]", accent: "border-orange-500/50 text-orange-300" },
+    { name: "Tailwind", position: "left-[66%] top-[40%]", accent: "border-cyan-500/50 text-cyan-300" },
+    { name: "Vercel", position: "left-[30%] top-[18%]", accent: "border-zinc-500/50 text-zinc-300" },
+    { name: "SQL", position: "left-[36%] top-[56%]", accent: "border-blue-500/50 text-blue-300" },
+    { name: "C / C++", position: "left-[27%] top-[58%]", accent: "border-indigo-500/50 text-indigo-300" },
+    { name: "AI Tools", position: "left-[58%] top-[61%]", accent: "border-red-500/50 text-red-300" },
   ]
 
   const projects = [
@@ -381,55 +322,13 @@ function App() {
   ]
 
   const workflow = [
-    {
-      label: "Idea",
-      icon: FiZap,
-      color: "text-yellow-400",
-      border: "border-yellow-500/40",
-      bg: "bg-yellow-500/10",
-    },
-    {
-      label: "Plan",
-      icon: FiClipboard,
-      color: "text-orange-400",
-      border: "border-orange-500/40",
-      bg: "bg-orange-500/10",
-    },
-    {
-      label: "AI Help",
-      icon: FiCpu,
-      color: "text-purple-400",
-      border: "border-purple-500/40",
-      bg: "bg-purple-500/10",
-    },
-    {
-      label: "Code",
-      icon: FiCode,
-      color: "text-cyan-400",
-      border: "border-cyan-500/40",
-      bg: "bg-cyan-500/10",
-    },
-    {
-      label: "Review",
-      icon: FiSearch,
-      color: "text-pink-400",
-      border: "border-pink-500/40",
-      bg: "bg-pink-500/10",
-    },
-    {
-      label: "Test",
-      icon: FiCheckCircle,
-      color: "text-red-400",
-      border: "border-red-500/40",
-      bg: "bg-red-500/10",
-    },
-    {
-      label: "Learn",
-      icon: FiBookOpen,
-      color: "text-zinc-300",
-      border: "border-zinc-600/60",
-      bg: "bg-zinc-800/40",
-    },
+    { label: "Idea", icon: FiZap, color: "text-yellow-400", border: "border-yellow-500/40", bg: "bg-yellow-500/10" },
+    { label: "Plan", icon: FiClipboard, color: "text-orange-400", border: "border-orange-500/40", bg: "bg-orange-500/10" },
+    { label: "AI Help", icon: FiCpu, color: "text-purple-400", border: "border-purple-500/40", bg: "bg-purple-500/10" },
+    { label: "Code", icon: FiCode, color: "text-cyan-400", border: "border-cyan-500/40", bg: "bg-cyan-500/10" },
+    { label: "Review", icon: FiSearch, color: "text-pink-400", border: "border-pink-500/40", bg: "bg-pink-500/10" },
+    { label: "Test", icon: FiCheckCircle, color: "text-red-400", border: "border-red-500/40", bg: "bg-red-500/10" },
+    { label: "Learn", icon: FiBookOpen, color: "text-zinc-300", border: "border-zinc-600/60", bg: "bg-zinc-800/40" },
   ]
 
   return (
@@ -459,7 +358,7 @@ function App() {
             </div>
 
             <a
-              href="/Francisco_Jaimes_Resume.pdf"
+              href={RESUME_PATH}
               target="_blank"
               rel="noreferrer"
               className="rounded-full border border-red-500/60 px-4 py-2 text-sm font-medium text-red-300 transition hover:bg-red-500/10 hover:shadow-[0_0_20px_rgba(220,38,38,0.35)]"
@@ -534,7 +433,7 @@ function App() {
               </a>
 
               <a
-                href="/Francisco_Jaimes_Resume.pdf"
+                href={RESUME_PATH}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full border border-zinc-700 bg-zinc-900/70 px-6 py-3 font-medium text-zinc-200 transition hover:-translate-y-1 hover:border-red-500/60 hover:text-white"
@@ -583,23 +482,19 @@ function App() {
             <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-red-500/25 shadow-[0_0_80px_rgba(220,38,38,0.18)] md:h-[520px] md:w-[520px]">
               <div className="absolute inset-8 rounded-full border border-red-500/20" />
               <div className="absolute inset-20 rounded-full border border-red-500/15" />
-
               <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-red-500/20" />
               <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-red-500/20" />
-
               <div className="absolute left-1/2 top-1/2 h-[90%] w-[35%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-red-500/20" />
               <div className="absolute left-1/2 top-1/2 h-[90%] w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-red-500/20" />
-
               <div className="absolute left-1/2 top-1/2 h-[35%] w-[95%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-red-500/20" />
               <div className="absolute left-1/2 top-1/2 h-[65%] w-[95%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-red-500/15" />
-
               <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-400 shadow-[0_0_30px_rgba(248,113,113,0.9)]" />
             </div>
 
             {expertiseTools.map((tool) => (
               <div
                 key={tool.name}
-                className={`absolute ${tool.position} rounded-full border bg-zinc-950/85 px-4 py-2 text-sm font-medium shadow-xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:bg-zinc-900 ${tool.accent}`}
+                className={`absolute ${tool.position} whitespace-nowrap rounded-full border bg-zinc-950/90 px-3 py-1.5 text-xs font-semibold shadow-xl backdrop-blur transition-all duration-300 hover:z-20 hover:-translate-y-1 hover:bg-zinc-900 sm:px-4 sm:py-2 sm:text-sm ${tool.accent}`}
               >
                 {tool.name}
               </div>
@@ -645,7 +540,6 @@ function App() {
                 <div>
                   <div className="flex items-center gap-3">
                     <span className="h-3 w-3 rounded-full bg-red-400 shadow-[0_0_18px_rgba(248,113,113,0.9)]" />
-
                     <h2 className="text-2xl font-bold">
                       {skillCategories[activeSkillCategory].title}
                     </h2>
@@ -677,7 +571,6 @@ function App() {
                       ) : (
                         <span className="text-zinc-600">•</span>
                       )}
-
                       {skill.name || skill}
                     </span>
                   )
@@ -704,26 +597,16 @@ function App() {
                 className="group overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/90 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:border-red-500/70 hover:shadow-[0_0_35px_rgba(220,38,38,0.18)]"
               >
                 <div className="relative h-56 overflow-hidden bg-zinc-950 md:h-64">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={`${project.title} screenshot`}
-                      className="h-full w-full object-cover opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
-                    />
-                  ) : (
-                    <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.28),transparent_40%)]">
-                      <p className="px-6 text-center text-3xl font-bold text-zinc-700">
-                        {project.title}
-                      </p>
-                    </div>
-                  )}
-
+                  <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.28),transparent_40%)]">
+                    <p className="px-6 text-center text-3xl font-bold text-zinc-700">
+                      {project.title}
+                    </p>
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
                 </div>
 
                 <div className="p-6">
                   <h3 className="text-2xl font-bold">{project.title}</h3>
-
                   <p className="mt-3 leading-7 text-zinc-300">
                     {project.description}
                   </p>
@@ -732,7 +615,6 @@ function App() {
                     <span className="rounded-full bg-red-600 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-white">
                       Scope
                     </span>
-
                     <span className="rounded-full bg-zinc-800 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-300">
                       Tech
                     </span>
@@ -754,27 +636,14 @@ function App() {
                   </div>
 
                   <div className="mt-6 border-t border-zinc-800 pt-5">
-                    <div className="flex flex-wrap gap-5">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-sm font-medium text-zinc-300 transition hover:text-red-300"
-                      >
-                        Code ↗
-                      </a>
-
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-sm font-medium text-zinc-300 transition hover:text-red-300"
-                        >
-                          Live ↗
-                        </a>
-                      )}
-                    </div>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm font-medium text-zinc-300 transition hover:text-red-300"
+                    >
+                      Code ↗
+                    </a>
                   </div>
                 </div>
               </article>
@@ -795,23 +664,35 @@ function App() {
           </h2>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/80 p-8 shadow-2xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(220,38,38,0.16)]">
-              <p className="font-mono text-sm uppercase tracking-[0.25em] text-zinc-500">
-                Location · Hover to Explore
-              </p>
+            <div className="group relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/80 p-8 shadow-2xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(220,38,38,0.16)]">
+              <img
+                src="/houston.jpg"
+                alt="Houston skyline"
+                className="absolute inset-0 h-full w-full object-cover opacity-0 grayscale transition duration-700 group-hover:scale-105 group-hover:opacity-60"
+              />
 
-              <div className="mt-16">
-                <h3 className="text-4xl font-bold tracking-tight">
-                  Houston, Texas
-                </h3>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.22),transparent_45%),linear-gradient(135deg,rgba(24,24,27,0.9),rgba(9,9,11,0.95))] transition duration-700 group-hover:bg-[linear-gradient(180deg,rgba(9,9,11,0.25),rgba(9,9,11,0.85))]" />
 
-                <p className="mt-4 font-mono text-sm text-zinc-400">
-                  29.7604° N, 95.3698° W
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:34px_34px] opacity-30" />
+
+              <div className="relative z-10">
+                <p className="font-mono text-sm uppercase tracking-[0.25em] text-zinc-500">
+                  Location · Hover to Explore
                 </p>
 
-                <p className="mt-1 font-mono text-sm text-zinc-500">
-                  Central Time · United States
-                </p>
+                <div className="mt-16">
+                  <h3 className="text-4xl font-bold tracking-tight">
+                    Houston, Texas
+                  </h3>
+
+                  <p className="mt-4 font-mono text-sm text-zinc-400">
+                    29.7604° N, 95.3698° W
+                  </p>
+
+                  <p className="mt-1 font-mono text-sm text-zinc-500">
+                    Central Time · United States
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -836,38 +717,35 @@ function App() {
           </div>
 
           <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-purple-500/30 bg-purple-500/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/60 hover:shadow-[0_0_25px_rgba(168,85,247,0.16)]">
-              <p className="font-mono text-sm uppercase tracking-[0.25em] text-purple-300">
-                Growth
-              </p>
-
-              <p className="mt-5 leading-7 text-zinc-300">
-                Constantly learning through projects, debugging, and improving
-                how I design and explain technical systems.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-red-500/30 bg-red-500/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-red-400/60 hover:shadow-[0_0_25px_rgba(220,38,38,0.18)]">
-              <p className="font-mono text-sm uppercase tracking-[0.25em] text-red-300">
-                Focus
-              </p>
-
-              <p className="mt-5 leading-7 text-zinc-300">
-                Deep interest in cybersecurity tools, full-stack systems, AI
-                utilities, and software that is practical to use.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/60 hover:shadow-[0_0_25px_rgba(249,115,22,0.16)]">
-              <p className="font-mono text-sm uppercase tracking-[0.25em] text-orange-300">
-                Craft
-              </p>
-
-              <p className="mt-5 leading-7 text-zinc-300">
-                I care about clean interfaces, useful backend logic, readable
-                code, and projects that are easy to explain.
-              </p>
-            </div>
+            {[
+              ["Growth", "Constantly learning through projects, debugging, and improving how I design and explain technical systems.", "purple"],
+              ["Focus", "Deep interest in cybersecurity tools, full-stack systems, AI utilities, and software that is practical to use.", "red"],
+              ["Craft", "I care about clean interfaces, useful backend logic, readable code, and projects that are easy to explain.", "orange"],
+            ].map(([title, text, color]) => (
+              <div
+                key={title}
+                className={`rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 ${
+                  color === "purple"
+                    ? "border-purple-500/30 bg-purple-500/5 hover:border-purple-400/60"
+                    : color === "red"
+                    ? "border-red-500/30 bg-red-500/5 hover:border-red-400/60"
+                    : "border-orange-500/30 bg-orange-500/5 hover:border-orange-400/60"
+                }`}
+              >
+                <p
+                  className={`font-mono text-sm uppercase tracking-[0.25em] ${
+                    color === "purple"
+                      ? "text-purple-300"
+                      : color === "red"
+                      ? "text-red-300"
+                      : "text-orange-300"
+                  }`}
+                >
+                  {title}
+                </p>
+                <p className="mt-5 leading-7 text-zinc-300">{text}</p>
+              </div>
+            ))}
           </div>
 
           <div className="mt-10 flex justify-center">
