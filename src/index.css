@@ -8,3 +8,29 @@ body {
   margin: 0;
   background: #09090b;
 }
+
+@keyframes fade-word {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.98);
+  }
+}
+
+.animate-fade-word {
+  animation: fade-word 2.2s ease-in-out;
+}

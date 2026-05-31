@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {
   SiPython,
   SiJavascript,
@@ -36,6 +36,8 @@ import {
   FiBriefcase,
 } from "react-icons/fi"
 
+const HERO_WORDS = ["BUILDER", "PROGRAMMER", "DEVELOPER", "ENGINEER", "CREATOR"]
+
 function SectionHeader({ eyebrow, title, description }) {
   return (
     <div className="text-center">
@@ -56,6 +58,15 @@ function SectionHeader({ eyebrow, title, description }) {
 
 function App() {
   const [activeSkillCategory, setActiveSkillCategory] = useState("foundations")
+  const [activeHeroWord, setActiveHeroWord] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveHeroWord((current) => (current + 1) % HERO_WORDS.length)
+    }, 2200)
+
+    return () => clearInterval(interval)
+  }, [])
 
   const navItems = [
     ["Projects", "#projects"],
@@ -500,9 +511,14 @@ function App() {
               <span className="text-red-300">full-stack development</span>.
             </p>
 
-            <h2 className="mt-8 bg-gradient-to-r from-red-500 via-orange-300 to-red-400 bg-clip-text text-6xl font-black tracking-tight text-transparent md:text-8xl">
-              BUILDER
-            </h2>
+            <div className="mt-8 min-h-[90px] md:min-h-[120px]">
+              <h2
+                key={HERO_WORDS[activeHeroWord]}
+                className="animate-fade-word bg-gradient-to-r from-red-500 via-orange-300 to-red-400 bg-clip-text text-6xl font-black tracking-tight text-transparent md:text-8xl"
+              >
+                {HERO_WORDS[activeHeroWord]}
+              </h2>
+            </div>
 
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
               I build practical tools that solve real problems — from network
